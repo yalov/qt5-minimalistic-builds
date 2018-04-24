@@ -2,7 +2,7 @@
 
 VERSION="5.10"
 TYPE="static"
-TARGET_FOLDER="qt-${VERSION}-${TYPE}-mingw-w64-x86_64"
+TARGET_FOLDER="qt-${VERSION}-${TYPE}-mingw-w32-x86"
 
 # Build initial dynamic package.
 cd "$VERSION$TYPE"
@@ -11,7 +11,8 @@ makepkg -sLf
 
 # Copy all package stuff from "pkg" subfolder.
 mkdir "$TARGET_FOLDER"
-mv ./pkg/mingw-w64-x86_64-qt5-static/mingw64/qt5-static/* "./$TARGET_FOLDER"
+#mv ./pkg/mingw-w64-x86_64-qt5-static/mingw64/qt5-static/* "./$TARGET_FOLDER"
+mv ./pkg/mingw-w64-i686-qt5-static/mingw32/qt5-static/* "./$TARGET_FOLDER"
 
 # Deploy dependent DLLs.
 cp ../tools/qtbinpatcher.exe "$TARGET_FOLDER/bin" -v

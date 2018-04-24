@@ -1,0 +1,4 @@
+/qt-*-static-*
+/qt-everywhere-src-*
+/qtbuild/
+/*static/qt-everywhere-src-*.tar.xz
