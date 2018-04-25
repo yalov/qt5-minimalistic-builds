@@ -1,11 +1,11 @@
 #!/bin/bash
 
-VERSION="5.10"
+VERSION="5.10.1"
 TYPE="dynamic"
 TARGET_FOLDER="qt-${VERSION}-${TYPE}-mingw-w64-x86_64"
 
 # Build initial dynamic package.
-cd "$VERSION"
+cd "mingw-$VERSION-x64"
 rm -rf ./bin ./pkg ./src ./$TARGET_FOLDER ./Qt5* ./*log
 makepkg -sLf
 
@@ -14,7 +14,7 @@ mkdir "$TARGET_FOLDER"
 mv ./pkg/mingw-w64-x86_64-qt5/mingw64/* "./$TARGET_FOLDER"
 
 # Copy all dependencies.
-echo "c:\\msys64\\mingw64\\" > "qt_paths.txt"
+echo "d:\\msys64\\mingw64\\" > "qt_paths.txt"
 
 # Generate lists of dependent DLLs.
 for f in $TARGET_FOLDER/bin/*.dll

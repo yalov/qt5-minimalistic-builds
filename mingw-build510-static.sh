@@ -5,7 +5,7 @@ TYPE="static"
 TARGET_FOLDER="qt-${VERSION}-${TYPE}-mingw-w32-x86"
 
 # Build initial dynamic package.
-cd "$VERSION$TYPE"
+cd "mingw-$VERSION$TYPE"
 rm -rf ./bin ./pkg ./src ./$TARGET_FOLDER ./Qt5* ./*log
 makepkg -sLf
 
